@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio BTS SIO SISR – Haymen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        p3: { black: '#050a1f', dark: '#0e2a66', blue: '#2f8dff', cyan: '#00e5ff', deep: '#9fd4ff' }
+                    },
+                    fontFamily: {
+                        display: ['Bricolage Grotesque', 'sans-serif'],
+                        body: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body {
+            color: #eaf3ff;
+            background-color: #050a1f;
+            background-image:
+                radial-gradient(120% 90% at 15% -10%, rgba(0, 102, 255, 0.55), transparent 60%),
+                radial-gradient(90% 70% at 100% 10%, rgba(0, 212, 255, 0.35), transparent 55%),
+                linear-gradient(180deg, #030716 0%, #04123f 45%, #010a2e 100%);
+            background-attachment: fixed;
+        }
+
+        /* Le "skew" typique du thème */
+        .skew-x { transform: skewX(-12deg); }
+        .unskew-x { transform: skewX(12deg); }
+
+        .btn {
+            display: inline-block;
+            background: #2f8dff;
+            color: #fff;
+            padding: .75rem 2rem;
+            box-shadow: 4px 4px 0 #00e5ff;
+            transition: transform .2s;
+        }
+        .btn:hover { transform: translate(-2px, -2px) skewX(-12deg); }
+
+        .card {
+            background: #0e2a66;
+            border: 2px solid transparent;
+            transition: all .3s;
+        }
+        .card:hover {
+            border-color: #00e5ff;
+            transform: translate(-4px, -4px) skewX(-12deg);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 4px;
+            background: #00e5ff;
+            transform: skewX(-12deg);
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-p3-blue">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-40 px-4 py-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-start">
+            <a href="#accueil" class="skew-x bg-p3-blue p-2 shadow-[4px_4px_0px_#00e5ff]">
+                <div class="unskew-x font-display font-extrabold text-xl px-4">Haymen</div>
+            </a>
+
+            <button id="burger" class="md:hidden skew-x bg-p3-blue font-bold px-4 py-3">
+                <span class="block unskew-x">☰ Menu</span>
+            </button>
+
+            <div id="menu" class="hidden md:flex gap-2 flex-col md:flex-row absolute md:static top-16 right-4 bg-p3-black/90 md:bg-transparent p-3 md:p-0">
+                <a href="#profil" class="skew-x bg-p3-black border-2 border-p3-blue text-xs font-bold px-3 py-2 hover:bg-p3-blue transition-colors"><span class="block unskew-x">Profil</span></a>
+                <a href="#missions" class="skew-x bg-p3-black border-2 border-p3-blue text-xs font-bold px-3 py-2 hover:bg-p3-blue transition-colors"><span class="block unskew-x">Missions</span></a>
+                <a href="#competences" class="skew-x bg-p3-black border-2 border-p3-blue text-xs font-bold px-3 py-2 hover:bg-p3-blue transition-colors"><span class="block unskew-x">Compétences</span></a>
+                <a href="#contact" class="skew-x bg-p3-black border-2 border-p3-blue text-xs font-bold px-3 py-2 hover:bg-p3-blue transition-colors"><span class="block unskew-x">Contact</span></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Accueil -->
+    <header id="accueil" class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 w-full">
+            <span class="skew-x inline-block bg-p3-cyan text-p3-black font-bold px-3 py-1 text-sm mb-6">
+                <span class="block unskew-x">BTS SIO · SISR</span>
+            </span>
+            <h1 class="font-display font-extrabold text-5xl md:text-7xl leading-tight mb-6">
+                Mairie de<br><span class="text-p3-blue">Bagnols-sur-Cèze</span>
+            </h1>
+            <p class="text-lg md:text-xl text-p3-deep font-bold max-w-lg border-l-4 border-p3-cyan pl-4 mb-10">
+                Systèmes, réseaux, sécurité et déploiement. Alternance au service informatique.
+            </p>
+            <a href="#missions" class="btn skew-x font-display font-extrabold text-xl">
+                <span class="block unskew-x">Voir mes missions</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Profil -->
+    <section id="profil" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-display font-extrabold text-4xl md:text-5xl text-p3-blue">Profil</h2>
+            <div class="max-w-2xl space-y-4 text-lg">
+                <p>Étudiant en 2<sup>e</sup> année de BTS SIO option SISR.</p>
+                <p>Au quotidien : déploiement de postes, administration Active Directory, réseau et dépannage.</p>
+                <p>Je me destine à l'administration systèmes, réseaux et à la cybersécurité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions -->
+    <section id="missions" class="py-24 bg-p3-dark/60 border-y-4 border-p3-blue">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-display font-extrabold text-4xl md:text-5xl text-p3-blue">Missions</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card skew-x">
+                    <div class="unskew-x p-6">
+                        <div class="text-4xl mb-4">💻</div>
+                        <h3 class="font-display font-bold text-2xl mb-2">Déploiement de postes</h3>
+                        <p class="text-p3-deep text-sm">Installation et configuration des postes utilisateurs.</p>
+                    </div>
+                </div>
+
+                <div class="card skew-x">
+                    <div class="unskew-x p-6">
+                        <div class="text-4xl mb-4">🗂️</div>
+                        <h3 class="font-display font-bold text-2xl mb-2">Active Directory & GPO</h3>
+                        <p class="text-p3-deep text-sm">Gestion des comptes, des groupes et des stratégies.</p>
+                    </div>
+                </div>
+
+                <div class="card skew-x">
+                    <div class="unskew-x p-6">
+                        <div class="text-4xl mb-4">🌐</div>
+                        <h3 class="font-display font-bold text-2xl mb-2">Réseau & VLAN</h3>
+                        <p class="text-p3-deep text-sm">Configuration de switchs Huawei et baie de brassage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences -->
+    <section id="competences" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-display font-extrabold text-4xl md:text-5xl text-p3-blue">Compétences</h2>
+
+            <div class="flex flex-wrap gap-4">
+                <span class="skew-x bg-p3-dark border-2 border-p3-blue py-3 px-6 shadow-[2px_2px_0px_#00e5ff]"><span class="block unskew-x font-display font-bold text-lg">🪟 Windows Server</span></span>
+                <span class="skew-x bg-p3-dark border-2 border-p3-blue py-3 px-6 shadow-[2px_2px_0px_#00e5ff]"><span class="block unskew-x font-display font-bold text-lg">🌀 Debian / Linux</span></span>
+                <span class="skew-x bg-p3-dark border-2 border-p3-blue py-3 px-6 shadow-[2px_2px_0px_#00e5ff]"><span class="block unskew-x font-display font-bold text-lg">🛡️ pfSense</span></span>
+                <span class="skew-x bg-p3-dark border-2 border-p3-blue py-3 px-6 shadow-[2px_2px_0px_#00e5ff]"><span class="block unskew-x font-display font-bold text-lg">🧱 Hyper-V</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-p3-dark/60 border-t-4 border-p3-blue">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="section-title font-display font-extrabold text-4xl md:text-5xl text-p3-blue">Contact</h2>
+            <p class="text-xl font-bold mb-2">✉️ haymenkarimi0@gmail.com</p>
+            <p class="text-xl font-bold">📍 Bagnols-sur-Cèze, Occitanie</p>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-sm font-bold text-p3-deep">
+        Portfolio BTS SIO SISR
+    </footer>
+
+    <script>
+        // Menu burger (mobile)
+        const menu = document.getElementById('menu');
+        document.getElementById('burger').addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            if (window.innerWidth < 768) menu.classList.add('hidden');
+        }));
+    </script>
+</body>
+</html>
